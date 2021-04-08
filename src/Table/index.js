@@ -10,7 +10,6 @@ export default function EmployeeTable(props) {
   return (<div className="tableContainer">
     <table>
       <thead>
-        {}
         <th>Employee Name</th>
         <th>Employee Salary</th>
         <th>Employee Age</th>

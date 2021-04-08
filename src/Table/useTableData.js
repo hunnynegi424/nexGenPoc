@@ -3,8 +3,20 @@ import { useEffect, useState } from "react";
 export default function(props) {
   const [state, setState] = useState([]);
 
+  useEffect(async () => {
+    await fetch('http://dummy.restapiexample.com/api/v1/employees')
+      .then(res => {
+        if(res.ok) return res.json();
+        throw res.json();
+      })
+      .then(data => {
+        data && localStorage.setItem('employee_data', JSON.stringify(data.data))
+      })
+      .catch(e => console.log(e))
+    props.setRefreshTable(true);
+  }, []);
+
   useEffect(() => {
-    console.log('here');
     if(props.refreshTable) {
       try {
         const employeeData = localStorage.getItem('employee_data');
