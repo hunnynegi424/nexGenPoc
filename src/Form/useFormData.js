@@ -19,6 +19,7 @@ export default function(props) {
     parsedStoredEmpData.push(empState);
     localStorage.setItem('employee_data', JSON.stringify(parsedStoredEmpData));
     props.setRefreshTable(true);
+    document.employeeForm.reset();
   }
 
   function onInputChangeHandler(event, field) {

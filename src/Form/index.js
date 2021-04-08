@@ -9,7 +9,7 @@ export default function EmployeeForm(props) {
 
   return (<div className="formContainer">
     <h3>Employee Form</h3>
-    <form onSubmit={(e) => onSubmitHandler(e)} autocomplete="off">
+    <form name="employeeForm" onSubmit={(e) => onSubmitHandler(e)} autocomplete="off">
       {columnSettings.map(f => (<>
         <label for={f.key}>{f.name}: </label>
         <input
