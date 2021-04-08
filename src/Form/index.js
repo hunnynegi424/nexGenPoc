@@ -1,13 +1,15 @@
 import React from 'react';
 import columnSettings from '../ColumnSettings';
 import useFormData from './useFormData';
+import './form.css';
 
 export default function EmployeeForm(props) {
 
   const { onSubmitHandler, onInputChangeHandler } = useFormData(props);
 
-  return (<div>
-    <form onSubmit={(e) => onSubmitHandler(e)}>
+  return (<div className="formContainer">
+    <h3>Employee Form</h3>
+    <form onSubmit={(e) => onSubmitHandler(e)} autocomplete="off">
       {columnSettings.map(f => (<>
         <label for={f.key}>{f.name}: </label>
         <input
@@ -17,7 +19,7 @@ export default function EmployeeForm(props) {
         />
         <br/>
       </>))}
-      <input type="submit" value="Submit" />
+      <input className="submitBtn" type="submit" value="Submit" />
     </form>
   </div>);
 }

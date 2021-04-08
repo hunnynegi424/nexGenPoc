@@ -33,6 +33,6 @@ export default function EmployeeTable(props) {
         </>))}
       </tbody>
     </table>
-    <button onClick={() => props.setRefreshTable(true)}>Refresh Table</button>
+    <button className="refreshBtn" onClick={() => props.setRefreshTable(true)}>Refresh Table</button>
   </div>);
 }
